@@ -33,6 +33,13 @@ main h1 {
     font-weight: 300;
     line-height: 1.2;
     text-align: center;
+    word-wrap: normal;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin-top: 30vh;
+    }
 }
 
 footer {

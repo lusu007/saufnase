@@ -14,14 +14,25 @@
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body onload="play('assets/opener.mp3')" onclick="play('assets/opener.mp3')">
+<body onload="play('assets/opener.mp3'); nameFromSubdomain();" onclick="play('assets/opener.mp3')">
 <main>
-    <h1>Moin Saufnase! 🍺</h1>
+    <h1 id="text"></h1>
 </main>
 <footer>
     <small>🍺 Philipp du Alkoholiker © 2021</small>
 </footer>
 <script>
+  function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  function nameFromSubdomain() {
+    let subdomain =  window.location.host.split('.')[1] ? window.location.host.split('.')[0] : false;
+    if (!subdomain.toString().match(/saufna/) && !subdomain === false) {
+      document.getElementById("text").innerHTML = "Moin " + capitalize(subdomain) + " du Saufnase! 🍺";
+    } else {
+      document.getElementById("text").innerHTML = "Moin Saufnase! 🍺";
+    }
+  }
   function play(file) {
     let audio = document.createElement('audio');
     audio.src = file;
