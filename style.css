@@ -1,6 +1,4 @@
 html {
-    position: relative;
-    min-height: 100%;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select:none;
@@ -8,17 +6,38 @@ html {
     -o-user-select:none;
 }
 
-#opener {
-    display: none;
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
-#clickable {
+body {
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: grab;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    height: 60px;
-    line-height: 60px;
+main {
+    margin-top: 45vh;
+    flex-grow: 1;
+}
+
+main h1 {
+    margin: 0;
+    color: #212529;
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+footer {
+    margin-bottom: 5vh;
+}
+
+footer small {
+    color: #6c757d;
 }
