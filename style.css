@@ -1,0 +1,24 @@
+html {
+    position: relative;
+    min-height: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
+}
+
+#opener {
+    display: none;
+}
+
+#clickable {
+    cursor: grab;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    line-height: 60px;
+}
