@@ -28,8 +28,11 @@
   function nameFromSubdomain() {
     let subdomain =  window.location.host.split('.')[1] ? window.location.host.split('.')[0] : false;
     if (!subdomain.toString().match(/saufna/) && !subdomain === false) {
+      let text = 'Moin ' + capitalize(subdomain) + ' du Saufnase! 🍺';
       document.getElementById("text").innerHTML = "Moin " + capitalize(subdomain) + " du Saufnase! 🍺";
       document.title = capitalize(subdomain) + " - Saufnase! 🍺"
+      document.querySelector('meta[name="title"]').setAttribute("content", text);
+      document.querySelector('meta[name="description"]').setAttribute("content", text);
     } else {
       document.getElementById("text").innerHTML = "Moin Saufnase! 🍺";
     }
